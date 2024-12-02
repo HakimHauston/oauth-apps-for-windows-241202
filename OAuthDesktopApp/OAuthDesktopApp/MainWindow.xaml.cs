@@ -32,8 +32,10 @@ namespace OAuthApp
     public partial class MainWindow : Window
     {
         // client configuration
-        const string clientID = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
-        const string clientSecret = "3f6NggMbPtrmIBpgx-MK2xXK";
+        //const string clientID = "581786658708-elflankerquo1a6vsckabbhn25hclla0.apps.googleusercontent.com";
+        //const string clientSecret = "3f6NggMbPtrmIBpgx-MK2xXK";
+        const string clientID = "101904050147-856qp55evv7tfnaqe8a5399gt9qmep99.apps.googleusercontent.com";
+        const string clientSecret = "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";
         const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         const string tokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
@@ -70,15 +72,19 @@ namespace OAuthApp
             http.Prefixes.Add(redirectURI);
             output("Listening..");
             http.Start();
-            
+
             // Creates the OAuth 2.0 authorization request.
-            string authorizationRequest = string.Format("{0}?response_type=code&scope=openid%20profile&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
+            //string authorizationRequest = string.Format("{0}?response_type=code&scope=openid%20profile&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
+            //string authorizationRequest = string.Format("{0}?response_type=code&scope=https://www.googleapis.com/auth/googleplay.purchases%20profile&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
+            string authorizationRequest = string.Format("{0}?response_type=code&scope=https://www.googleapis.com/auth/androidpublisher%20profile&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
                 authorizationEndpoint,
                 System.Uri.EscapeDataString(redirectURI),
                 clientID,
                 state,
                 code_challenge,
                 code_challenge_method);
+
+            output("authorization request: " + authorizationRequest);
 
             // Opens request in the browser.
             System.Diagnostics.Process.Start(authorizationRequest);

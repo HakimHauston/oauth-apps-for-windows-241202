@@ -20,14 +20,14 @@ limitations under the License.
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OAuthApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="550" Width="555"
         >
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <Button x:Name="button" HorizontalAlignment="Left" Margin="18,22,0,0" VerticalAlignment="Top" Width="206" Height="46" Click="button_Click"
                 BorderThickness="0" Padding="0" Background="Transparent">
             <Image Source="Assets/btn_google_sign-in.png" Stretch="UniformToFill"/>
         </Button>
-        <TextBox x:Name="textBoxOutput" HorizontalAlignment="Left" Height="209" Margin="22,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="470"
+        <TextBox x:Name="textBoxOutput" HorizontalAlignment="Left" Height="403" Margin="22,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="515"
          IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
          />
     </Grid>

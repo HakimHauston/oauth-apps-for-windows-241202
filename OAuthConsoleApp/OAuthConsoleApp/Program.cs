@@ -32,14 +32,18 @@ namespace OAuthConsoleApp
 
         static async Task<int> Main(string[] args)
         {
-            if (args.Length != 2)
-            {
-                Console.WriteLine("Required command line arguments: client-id client-secret");
-                return 1;
-            }
-            string clientId = args[0];
-            string clientSecret = args[1];
-            
+            //if (args.Length != 2)
+            //{
+            //    Console.WriteLine("Required command line arguments: client-id client-secret");
+            //    return 1;
+            //}
+            //string clientId = args[0];
+            //string clientSecret = args[1];
+
+            string clientId = "101904050147-856qp55evv7tfnaqe8a5399gt9qmep99.apps.googleusercontent.com";
+            string clientSecret = "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";
+
+
             Console.WriteLine("+-----------------------+");
             Console.WriteLine("|  Sign in with Google  |");
             Console.WriteLine("+-----------------------+");
